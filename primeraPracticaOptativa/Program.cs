@@ -22,7 +22,7 @@ namespace primeraPracticaOptativa
                 Console.WriteLine("Ingrese el precio bruto");
                 precioString = Console.ReadLine();
             }
-            Console.WriteLine($"El precio total a pagar es: ${precioBruto + precioBruto * 0.15}";
+            Console.WriteLine($"El precio total a pagar es: ${precioBruto + precioBruto * 0.15}");
         }
 
     }
