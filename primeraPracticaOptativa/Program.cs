@@ -6,15 +6,15 @@ namespace primeraPracticaOptativa
     {
         static void Main(string[] args)
         {
-            //PrecioConGanancia();
-            CampeonatoEstudiantil();
+            PrecioConGanancia();
+            //CampeonatoEstudiantil();
         }
 
         //1 El precio de los productos no tiene incluido el incremento del 15% que representa la ganancia del negocio, por lo tanto, el algoritmo debe calcular
         //el precio final a abonar por un cliente. Se ingresa el precio del producto y como resultado muestra el precio de venta.
         static void PrecioConGanancia() 
         { 
-            Console.WriteLine("Ingrese el precio bruto");
+            Console.WriteLine("Ingrese el precio bruto");// ver menor a 0
             string precioString=Console.ReadLine();
             double precioBruto;
             while(!double.TryParse(precioString, out precioBruto))
@@ -23,6 +23,7 @@ namespace primeraPracticaOptativa
                 Console.WriteLine("Ingrese el precio bruto");
                 precioString = Console.ReadLine();
             }
+
             Console.WriteLine($"El precio total a pagar es: ${precioBruto + precioBruto * 0.15}");
         }
 
