@@ -87,16 +87,22 @@ namespace primeraPracticaOptativa
         //4 Se trata de implementar un programa que sume los dígitos de un número entero no negativo de 4 dígitos.Por ejemplo, la suma de los dígitos del 3433 es 13.
         //Para darle un poco más de emoción, el programa no se limitará a escribir el resultado de la suma,
         //sino que también escribirá todos los sumandos utilizados: 3 + 4 + 3 + 3 = 13.
+        //5 Resolver la consiga del punto 4 con la particularidad que el número puede tener cualquier cantidad de dígitos, es decir, puede ser un número de dos dígitos
+        //como un número de 6 dígitos. Tomá la codificación anterior e introducí los cambios que sean necesarios.
         static void SumaDeLaCifra()
         {
             Console.WriteLine("Ingrese el número para sumar sus cifras");
             string numeroString=Console.ReadLine();
-            int suma=0;
+            uint suma=0;
+            string numero="";
             foreach (char item in numeroString)
             {
-                suma += int.Parse(item.ToString());
+                suma += uint.Parse(item.ToString());
+                numero += item.ToString() + " + ";
             }
-            Console.WriteLine(suma);
+            numero = numero.TrimEnd(' ','+');
+            Console.WriteLine();
+            Console.WriteLine($"{numero} = {suma}");
         }
     }
 }
