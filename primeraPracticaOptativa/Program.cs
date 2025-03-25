@@ -8,7 +8,8 @@ namespace primeraPracticaOptativa
         {
             //PrecioConGanancia();
             //CampeonatoEstudiantil();
-            SumaDeLaCifra();
+            //SumaDeLaCifra();
+            PorcentajeAportado();
         }
 
         //1 El precio de los productos no tiene incluido el incremento del 15% que representa la ganancia del negocio, por lo tanto, el algoritmo debe calcular
@@ -103,6 +104,29 @@ namespace primeraPracticaOptativa
             numero = numero.TrimEnd(' ','+');
             Console.WriteLine();
             Console.WriteLine($"{numero} = {suma}");
+        }
+        //6 Tres personas aportan diferente capital a una sociedad y desean saber el valor total aportado y qué porcentaje aportó cada una (indicando nombre y porcentaje).
+        // Para ello, solicitar la carga por teclado del nombre de cada socio, su capital aportado y a partir de esto calcular e informar lo requerido previamente 
+        static void PorcentajeAportado()
+        {
+            string[] socio= new string[3];
+            double[] capitalAportado= new double[3];
+            int aportantes = 3;
+            double capitalTotal=0;
+            for (int i = 0; i < aportantes; i++)
+            {
+                Console.WriteLine("Ingresa el nombre del socio");
+                socio[i] = Console.ReadLine();
+                Console.WriteLine("Ingresa el capital aportado por este socio");
+                capitalAportado[i] = double.Parse(Console.ReadLine());
+                capitalTotal += capitalAportado[i];
+            }
+            Console.WriteLine($"Capital total aportado: ${capitalTotal}");
+            for (int i = 0; i < aportantes; i++)
+            {
+                double porcentaje = (capitalAportado[i]*100)/capitalTotal;
+                Console.WriteLine($"El socio {socio[i]} aportó el {porcentaje}%");
+            }
         }
     }
 }
