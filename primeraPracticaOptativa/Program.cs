@@ -6,8 +6,9 @@ namespace primeraPracticaOptativa
     {
         static void Main(string[] args)
         {
-            PrecioConGanancia();
+            //PrecioConGanancia();
             //CampeonatoEstudiantil();
+            SumaDeLaCifra();
         }
 
         //1 El precio de los productos no tiene incluido el incremento del 15% que representa la ganancia del negocio, por lo tanto, el algoritmo debe calcular
@@ -82,6 +83,20 @@ namespace primeraPracticaOptativa
                         nombre = Console.ReadLine();
                     }
                 }
+        }
+        //4 Se trata de implementar un programa que sume los dígitos de un número entero no negativo de 4 dígitos.Por ejemplo, la suma de los dígitos del 3433 es 13.
+        //Para darle un poco más de emoción, el programa no se limitará a escribir el resultado de la suma,
+        //sino que también escribirá todos los sumandos utilizados: 3 + 4 + 3 + 3 = 13.
+        static void SumaDeLaCifra()
+        {
+            Console.WriteLine("Ingrese el número para sumar sus cifras");
+            string numeroString=Console.ReadLine();
+            int suma=0;
+            foreach (char item in numeroString)
+            {
+                suma += int.Parse(item.ToString());
+            }
+            Console.WriteLine(suma);
         }
     }
 }
